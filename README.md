@@ -1,8 +1,10 @@
 # CSST--Reconstruction-Algorithm-of-Aperture-Diffraction-Imaging-Spectrometer
 
 More general experimental results under different exposure conditions are that the CSST-9stg can improve close to 1.5 dB in PSNR over the Restormer on the task of ADIS reconstruction.
+
 Notably, the algorithm can be used to solve the inverse problem of PSF engineering.
 
+This toolkit will be continually refined.
 
 
 
@@ -68,18 +70,40 @@ We will soon make available the training and test sets used in the paper impleme
 ```shell
 # first step
 cd CSST/tools
-
+python gen_gt_mea.py
 
 # second step
 python train.py --template CSST-3stg --outf ./exp/CSST-3stg/ --method CSST-3stg
 python train.py --template CSST-5stg --outf ./exp/CSST-5stg/ --method CSST-5stg
 python train.py --template CSST-7stg --outf ./exp/CSST-7stg/ --method CSST-7stg
 python train.py --template CSST-9stg --outf ./exp/CSST-9stg/ --method CSST-9stg 
+```
+
+The training log, trained model, and reconstrcuted HSI will be available in `CSST/simulation/train_code/exp/` . 
 
 
-
-### 4.2　testing
+### 4.2　Testing
 By loading model weights in such a way that you can quickly implement model testing from the training code
+
+
+
+
+### 4.3 Evaluating the Params and FLOPS of models
+
+  We have provided a function `my_summary()` in `simulation/test_code/utils.py`, please use this function to evaluate the parameters and computational complexity of the models, especially the Transformers as 
+
+```shell
+from utils import my_summary
+my_summary(CSST(), 256, 256, 28, 1)
+```
+
+
+&nbsp;
+
+
+## 5. Real Experiement:
+
+### 5.1　Training
 
 
 
