@@ -7,6 +7,13 @@ Notably, the algorithm can be used to solve the inverse problem of PSF engineeri
 This toolkit will be continually refined.
 
 
+## 1. Result:
+<img src="./figure/frame2channel12.gif"  height=170 width=170>
+
+
+
+&nbsp;
+
 
 
 ## 2. Create Environment:
@@ -104,6 +111,42 @@ my_summary(CSST(), 256, 256, 28, 1)
 ## 5. Real Experiement:
 
 ### 5.1　Training
+
+```shell
+# first step
+cd CSST/tools
+python gen_gt_mea.py
+
+# second step
+python train.py --template CSST-3stg --outf ./exp/CSST-3stg/ --method CSST-3stg
+python train.py --template CSST-5stg --outf ./exp/CSST-5stg/ --method CSST-5stg
+python train.py --template CSST-7stg --outf ./exp/CSST-7stg/ --method CSST-7stg
+python train.py --template CSST-9stg --outf ./exp/CSST-9stg/ --method CSST-9stg 
+```
+
+The training log, trained model, and reconstrcuted HSI will be available in `CSST/simulation/train_code/exp/` . 
+
+
+### 5.2　Testing
+By loading model weights in such a way that you can quickly implement model testing from the training code
+
+
+
+
+## 6. Citation
+If this repo helps you, please consider citing our works:
+
+
+```shell
+# MST
+@inproceedings{lv2023aperture,
+  title={Aperture Diffraction for Compact Snapshot Spectral Imaging},
+  author={Lv, Tao and Ye, Hao and Yuan, Quan and Shi, Zhan and Wang, Yibo and Wang, Shuming and Cao, Xun},
+  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
+  pages={10574--10584},
+  year={2023}
+}
+```
 
 
 
