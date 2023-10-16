@@ -8,9 +8,11 @@ Notably, the algorithm can be used to solve the inverse problem of PSF engineeri
 
 
 ## 1. Result:
-<img src="./figure/"  height=170 width=170>
+<img src="./figure/final-fig4s.png"  height=400 width=170>
 
+<img src="./figure/table.png"  height=400 width=170>
 
+**A more general result is that the CSST-9stg exhibits around 35dB in PSNR.**
 
 &nbsp;
 
@@ -97,7 +99,7 @@ By loading model weights in such a way that you can quickly implement model test
 
 ### 4.3 Evaluating the Params and FLOPS of models
 
-  We have provided a function `my_summary()` in `simulation/test_code/utils.py`, please use this function to evaluate the parameters and computational complexity of the models, especially the Transformers as 
+  We have provided a function `my_summary()` in `simulation/train_code/utils.py`, please use this function to evaluate the parameters and computational complexity of the models, especially the Transformers as 
 
 ```shell
 from utils import my_summary
