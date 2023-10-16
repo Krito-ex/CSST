@@ -1,14 +1,14 @@
 # CSST--Reconstruction-Algorithm-of-Aperture-Diffraction-Imaging-Spectrometer
 
-More general experimental results under different exposure conditions are that the CSST-9stg can improve close to 1.5 dB in PSNR over the Restormer on the task of ADIS reconstruction.
+More general experimental results under different exposure conditions are that the **CSST-9stg** can **improve close to 1.5 dB in PSNR** over the **Restormer** on the task of ADIS reconstruction.
 
-Notably, the algorithm can be used to solve the inverse problem of PSF engineering.
+Notably, the algorithm can be used to solve the inverse problem of PSF engineering and RGB super-resolution.
 
-This toolkit will be continually refined.
+**This toolkit will be continually refined.**
 
 
 ## 1. Result:
-<img src="./figure/frame2channel12.gif"  height=170 width=170>
+<img src="./figure/"  height=170 width=170>
 
 
 
@@ -114,8 +114,8 @@ my_summary(CSST(), 256, 256, 28, 1)
 
 ```shell
 # first step
-cd CSST/tools
-python gen_gt_mea.py
+cd CSST/Real/train_code
+python create_dataset.py
 
 # second step
 python train.py --template CSST-3stg --outf ./exp/CSST-3stg/ --method CSST-3stg
@@ -124,13 +124,18 @@ python train.py --template CSST-7stg --outf ./exp/CSST-7stg/ --method CSST-7stg
 python train.py --template CSST-9stg --outf ./exp/CSST-9stg/ --method CSST-9stg 
 ```
 
-The training log, trained model, and reconstrcuted HSI will be available in `CSST/simulation/train_code/exp/` . 
+The training log, trained model, and reconstrcuted HSI will be available in `CSST/Real/train_code/exp/` . 
 
 
 ### 5.2　Testing
-By loading model weights in such a way that you can quickly implement model testing from the training code
 
+```shell
+# first step
+cd CSST/Real/test_code
+python test_CSST_final.py
+```
 
+&nbsp;
 
 
 ## 6. Citation
