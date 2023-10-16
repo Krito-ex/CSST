@@ -8,9 +8,9 @@ Notably, the algorithm can be used to solve the inverse problem of PSF engineeri
 
 
 ## 1. Result:
-<img src="./figure/final-fig4s.png"  height=400 width=170>
+<img src="./figure/final-fig4s.png"  height=250 width=900>
 
-<img src="./figure/table.png"  height=400 width=170>
+<img src="./figure/table.png"  height=300 width=900>
 
 **A more general result is that the CSST-9stg exhibits around 35dB in PSNR.**
 
