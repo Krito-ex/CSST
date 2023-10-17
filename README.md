@@ -145,7 +145,7 @@ If this repo helps you, please consider citing our works:
 
 
 ```shell
-# MST
+# ADIS+CSST
 @inproceedings{lv2023aperture,
   title={Aperture Diffraction for Compact Snapshot Spectral Imaging},
   author={Lv, Tao and Ye, Hao and Yuan, Quan and Shi, Zhan and Wang, Yibo and Wang, Shuming and Cao, Xun},
