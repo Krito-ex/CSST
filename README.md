@@ -7,7 +7,7 @@
 
 
 ### Dependencies
-- **CSST is an open-source project that leverages the functionality provided by external libraries called [MST-plus-plus](https://github.com/caiyuanhao1998/MST-plus-plus) and [MST](https://github.com/caiyuanhao1998/MST). **
+- CSST is an open-source project that leverages the functionality provided by external libraries called [MST-plus-plus](https://github.com/caiyuanhao1998/MST-plus-plus) and [MST](https://github.com/caiyuanhao1998/MST). 
 - CSST modifies the underlying framework from [MST-plus-plus](https://github.com/caiyuanhao1998/MST-plus-plus) and [MST](https://github.com/caiyuanhao1998/MST) to perform a completely noval reconstruction task (ADIS) as well as PSF engineering. You can find the original MST-plus-plus repository [here](https://github.com/caiyuanhao1998/MST-plus-plus) and MST repository [here](https://github.com/caiyuanhao1998/MST). 
 
 ### License
