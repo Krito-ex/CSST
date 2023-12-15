@@ -32,14 +32,14 @@ def map_xy(n):
     map = [-5,-3,-1,0,1,3,5]
     return map[n]
 
-#寻迹查找法，在926×926中查找与256×256叠加的分量
+
 def gen_adis_meas_torch_xunji(data_batch, Y2H=True, out_h=256, out_w=256):
-    # 去除了原代码中的参数逻辑（Y2H，mul_mask） data_batch, mask3d_batch:[B, nC, H, W]
+    
     [bs, nC, h, w] = data_batch.shape  #bs,28,926,926
-    D_num = 3          #可以仿真的最多的衍射阶次
+    D_num = 3          
     offset1 = 40 // 2
     step = 1
-    center_x = (w - out_w) // 2   #只有中间是真正位置不变的，所以锚定中间256×256的左下角位置
+    center_x = (w - out_w) // 2   
     center_y = (h - out_h) // 2
     MEA = torch.zeros((bs, nC, out_h, out_w)).cuda().float()
     # MEA_B = torch.zeros((bs, nC, out_h, out_w)).cuda().float()
@@ -71,7 +71,7 @@ def gen_adis_meas_torch_xunji(data_batch, Y2H=True, out_h=256, out_w=256):
                 if (torch.abs(xx)+torch.abs(yy)) > 3:
                     continue
                 mea1_y = int(center_y + map_xy(y) * offset)
-                mea1 = mea0[:, mea1_y:mea1_y + out_h, mea1_x:mea1_x + out_w] * D_martrix[x, y]  # 乘以衍射衰减系数
+                mea1 = mea0[:, mea1_y:mea1_y + out_h, mea1_x:mea1_x + out_w] * D_martrix[x, y]  
                 mea = mea + mea1
 
         mea[:, 0::2, 0::2] *= RGB_para('G')[i] * 0.01
