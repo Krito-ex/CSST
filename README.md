@@ -5,17 +5,10 @@
 - Notably, the algorithm can be used to solve the inverse problem of PSF engineering and RGB super-resolution.
 - **This toolkit will be continually refined.**
 
-
-### Dependencies
-- CSST is an open-source project that leverages the functionality provided by external libraries called [MST-plus-plus](https://github.com/caiyuanhao1998/MST-plus-plus) and [MST](https://github.com/caiyuanhao1998/MST). 
-- CSST modifies the underlying framework from [MST-plus-plus](https://github.com/caiyuanhao1998/MST-plus-plus) and [MST](https://github.com/caiyuanhao1998/MST) to perform a completely noval reconstruction task (ADIS) as well as PSF engineering. You can find the original MST-plus-plus repository [here](https://github.com/caiyuanhao1998/MST-plus-plus) and MST repository [here](https://github.com/caiyuanhao1998/MST). 
-
-### License
-- CSST's source code is subject to the [CSST](LICENSE).
-- The original code from [MST-plus-plus](https://github.com/caiyuanhao1998/MST-plus-plus) and [MST](https://github.com/caiyuanhao1998/MST) retain their original licensing, which can be found in the [MST-plus-plus](https://github.com/caiyuanhao1998/MST-plus-plus) and [MST](https://github.com/caiyuanhao1998/MST).
-
 ### Acknowledgements
 - We would like to express our gratitude to the author and contributors of MST-plus-plus and MST for their valuable work.
+- CSST is an open-source project that leverages the functionality provided by external libraries called [MST-plus-plus](https://github.com/caiyuanhao1998/MST-plus-plus) and [MST](https://github.com/caiyuanhao1998/MST). 
+- CSST modifies the underlying framework from [MST-plus-plus](https://github.com/caiyuanhao1998/MST-plus-plus) and [MST](https://github.com/caiyuanhao1998/MST) to perform a completely noval reconstruction task (ADIS) as well as PSF engineering. You can find the original MST-plus-plus repository [here](https://github.com/caiyuanhao1998/MST-plus-plus) and MST repository [here](https://github.com/caiyuanhao1998/MST). 
 
 
 
@@ -89,11 +82,6 @@ We will soon make available the training and test sets used in the paper impleme
 ### 4.1　Training
 
 ```shell
-# first step
-cd CSST/tools
-python gen_gt_mea.py
-
-# second step
 python train.py --template CSST-3stg --outf ./exp/CSST-3stg/ --method CSST-3stg
 python train.py --template CSST-5stg --outf ./exp/CSST-5stg/ --method CSST-5stg
 python train.py --template CSST-7stg --outf ./exp/CSST-7stg/ --method CSST-7stg
@@ -127,11 +115,6 @@ my_summary(CSST(), 256, 256, 28, 1)
 ### 5.1　Training
 
 ```shell
-# first step
-cd CSST/Real/train_code
-python create_dataset.py
-
-# second step
 python train.py --template CSST-3stg --outf ./exp/CSST-3stg/ --method CSST-3stg
 python train.py --template CSST-5stg --outf ./exp/CSST-5stg/ --method CSST-5stg
 python train.py --template CSST-7stg --outf ./exp/CSST-7stg/ --method CSST-7stg
